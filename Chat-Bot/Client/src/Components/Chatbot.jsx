@@ -52,7 +52,12 @@ const Chatbot = () => {
       }
     };
 
-    fetchFormData();
+    if (id) {
+      // Added check to ensure id is defined
+      fetchFormData();
+    } else {
+      console.log("No ID provided in the URL parameters"); // Added error message for missing id
+    }
   }, [id]);
 
   useEffect(() => {
@@ -88,7 +93,7 @@ const Chatbot = () => {
     setInputFields(updatedInputFields);
 
     try {
-      await axios.post("http://localhost:5000/api/save-chat", {
+      await axios.post("https://chatbot-api-6vwy.onrender.com/api/save-chat", {
         linkId: id,
         message: currentInput.inputValue,
       });

@@ -13,7 +13,12 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Failed to connect to MongoDB", err));
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://formbot-api-nwz1.onrender.com",
+    // https://formbot-api-nwz1.onrender.com/
+  })
+);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

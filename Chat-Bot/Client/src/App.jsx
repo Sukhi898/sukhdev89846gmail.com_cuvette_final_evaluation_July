@@ -7,9 +7,6 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/form/unique/:id" element={<Chatbot />} />
-<Route path="/other-route" component={OtherComponent} />
-        <Route path="/" exact component={HomeComponent} />
-        <Route component={NotFoundComponent} /> 
       </Routes>
     </Router>
   );
